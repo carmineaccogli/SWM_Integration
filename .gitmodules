@@ -1,0 +1,3 @@
+[submodule "AuthorizationMS"]
+	path = AuthorizationMS
+	url = https://github.com/fabiocarluccio/SWM_app
