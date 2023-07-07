@@ -12,5 +12,9 @@ git commit -m
 git push origin main
 ```
 
-## CLONE THE REPOSITORY 
+### TO IMPLEMENT IN A SCRIPT FOR AUTOMATE
+To maintain in sync the submodules in this repo with the latest commit of the remote repos:
+```
+git submodule update --remote
+```
 
