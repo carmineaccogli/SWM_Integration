@@ -3,7 +3,9 @@ The Integration Repository for all the microservices of the Smart Waste Manageme
 
 ## ADD A SUBMODULE
 To add a submodule (aka a microservice) insert the following command in your local repository:
-```gitsubmodule add URLREPOSITORY DIRECTORY_IN_YOUR_INTREPO```
+```
+git submodule add URLREPOSITORY DIRECTORY_IN_YOUR_INTREPO
+```
 
 Then as usual it is necessary to do:
 ```
