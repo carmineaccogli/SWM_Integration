@@ -13,5 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set execute permissions for update_submodules.sh
+        run: chmod +x ./.github/update_submodules.sh
+
       - name: Run update_submodules.sh script
         run: ./.github/update_submodules.sh  
