@@ -17,7 +17,7 @@ git push origin main
 ### TO IMPLEMENT IN A SCRIPT FOR AUTOMATE
 To maintain in sync the submodules in this repo with the latest commit of the remote repos:
 ```
-git submodule update --remote --merge
+git submodule update --init --recursive --remote 
 ```
 
 ### CONTROL THE COMMIT STATUS OF THE SUBMODULES ###
