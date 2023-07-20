@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run update_submodules.sh script
-        run: ./update_submodules.sh  
+        run: ./.github/update_submodules.sh  
