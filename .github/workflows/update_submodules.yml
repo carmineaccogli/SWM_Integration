@@ -8,15 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          submodules: 'recursive' 
-
       - name: Set up Git credentials
         run: |
           git config --global user.email "accoglicarmine.a@gmail.com"  
-          git config --global user.name "carmineaccogli"  
+          git config --global user.name "carmineaccogli"  # Cambia con il tuo nome utente Git
 
       - name: Update submodules
         run: |
