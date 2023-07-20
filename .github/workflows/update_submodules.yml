@@ -1,0 +1,17 @@
+name: Update Submodules
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  update_submodules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run update_submodules.sh script
+        run: ./update_submodules.sh  
