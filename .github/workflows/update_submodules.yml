@@ -1,0 +1,26 @@
+name: Update Submodules
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  update_submodules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive' 
+
+      - name: Set up Git credentials
+        run: |
+          git config --global user.email "accoglicarmine.a@gmail.com"  
+          git config --global user.name "carmineaccogli"  # Cambia con il tuo nome utente Git
+          git config --global credential.helper store
+          git config --global user.password ${{ secrets.GIT_TOKEN }}
+
+      - name: Update submodules
+        run: |
+          cd .
+          git submodule update --init --recursive --remote
