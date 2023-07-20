@@ -16,9 +16,7 @@ jobs:
       - name: Set up Git credentials
         run: |
           git config --global user.email "accoglicarmine.a@gmail.com"  
-          git config --global user.name "carmineaccogli"  # Cambia con il tuo nome utente Git
-          git config --global credential.helper store
-          git config --global user.password ${{ secrets.GIT_TOKEN }}
+          git config --global user.name "carmineaccogli"  
 
       - name: Update submodules
         run: |
