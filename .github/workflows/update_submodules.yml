@@ -13,6 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Git credentials
+        run: git config --global credential.helper store && git config --global user.email "accoglicarmine.a@gmail.com" && git config --global user.name "carmineaccogli" && git config --global user.password ${{ secrets.GIT_TOKEN }}
+
       - name: Set execute permissions for update_submodules.sh
         run: chmod +x ./.github/update_submodules.sh
 
