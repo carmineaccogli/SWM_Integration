@@ -4,3 +4,6 @@
 [submodule "SmartBinMS"]
 	path = SmartBinMS
 	url = https://github.com/carmineaccogli/SmartBinMS.git
+[submodule "CitizenMS"]
+	path = CitizenMS
+	url = https://github.com/carmineaccogli/CitizenMS.git
