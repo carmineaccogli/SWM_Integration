@@ -1,3 +1,6 @@
 [submodule "AuthorizationMS"]
 	path = AuthorizationMS
 	url = https://github.com/fabiocarluccio/SWM_app
+[submodule "SmartBinMS"]
+	path = SmartBinMS
+	url = https://github.com/carmineaccogli/SmartBinMS.git
