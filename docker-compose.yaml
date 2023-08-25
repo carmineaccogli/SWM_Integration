@@ -35,6 +35,44 @@ services:
     entrypoint: java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000 -jar /app/app.jar
 
 
+  smartbinsManagement_service:
+    platform: linux/x86_64
+    image: openjdk:17-jdk-alpine
+    container_name: SMARTBINS_SERVICE
+    ports:
+      - "8081:8080"
+      - "8001:8000"
+    expose:
+      - "8001"
+    depends_on:
+      - database
+    networks:
+      - my-network
+    volumes:
+      - ./SmartBinMS/build/libs/SmartBinMS-0.0.1-SNAPSHOT.jar:/app/app.jar
+    working_dir: /app
+    entrypoint: java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8001 -jar /app/app.jar
+
+
+  citizenManagement_service:
+    platform: linux/x86_64
+    image: openjdk:17-jdk-alpine
+    container_name: CITIZEN_SERVICE
+    ports:
+      - "8082:8080"
+      - "8002:8000"
+    expose:
+      - "8002"
+    depends_on:
+      - database
+    networks:
+      - my-network
+    volumes:
+      - ./CitizenMS/build/libs/CitizenMS-0.0.1-SNAPSHOT.jar:/app/app.jar
+    working_dir: /app
+    entrypoint: java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8002 -jar /app/app.jar
+
+
 
 networks:
   my-network:
