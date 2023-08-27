@@ -16,11 +16,10 @@ services:
     networks:
       - my-network
 
-  login_service:
+  loginService:
     platform: linux/x86_64
     image: openjdk:17-jdk-alpine
     container_name: LOGIN_Service
-    hostname: login_service
     ports:
       - "8080:8080"
       - "8000:8000"
@@ -36,11 +35,10 @@ services:
     entrypoint: java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000 -jar /app/app.jar
 
 
-  smartbinsManagement_service:
+  smartbinsManagementService:
     platform: linux/x86_64
     image: openjdk:17-jdk-alpine
     container_name: SMARTBINS_SERVICE
-    hostname: smartbinsManagement_service
     ports:
       - "8081:8080"
       - "8001:8000"
@@ -56,11 +54,10 @@ services:
     entrypoint: java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8001 -jar /app/app.jar
 
 
-  citizenManagement_service:
+  citizenManagementService:
     platform: linux/x86_64
     image: openjdk:17-jdk-alpine
     container_name: CITIZEN_SERVICE
-    hostname: citizenManagement_service
     ports:
       - "8082:8080"
       - "8002:8000"
