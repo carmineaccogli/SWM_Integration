@@ -2,8 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/AlarmsMS" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/AuthorizationMS" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CitizenMS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DisposalMs" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/SmartBinMS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/TaxMS" vcs="Git" />
   </component>
 </project>
