@@ -16,6 +16,20 @@ services:
     networks:
       - my-network
 
+
+  rabbitmq:
+    build:
+      context: ./
+    hostname: "rabbit"
+    ports:
+      - "5672:5672"  # Porta per le connessioni AMQP
+      - "15672:15672"  # Porta per l'interfaccia di gestione web
+      - "1883:1883"   # Porta per MQTT
+      - "61613:61613" # Porta per STOMP
+    networks:
+      - my-network
+
+
   loginService:
     platform: linux/x86_64
     image: openjdk:17-jdk-alpine
@@ -72,7 +86,62 @@ services:
     working_dir: /app
     entrypoint: java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8002 -jar /app/app.jar
 
+  disposalManagementService:
+    platform: linux/x86_64
+    image: openjdk:17-jdk-alpine
+    container_name: DISPOSAL_SERVICE
+    ports:
+      - "8083:8080"
+      - "8003:8000"
+    expose:
+      - "8003"
+    depends_on:
+      - database
+      - rabbitmq
+    networks:
+      - my-network
+    volumes:
+      - ./DisposalMs/build/libs/DisposalMS-0.0.1-SNAPSHOT.jar:/app/app.jar
+    working_dir: /app
+    entrypoint: java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8003 -jar /app/app.jar
 
+  alarmsMS:
+    platform: linux/x86_64
+    image: openjdk:17-jdk-alpine
+    container_name: ALARMS_SERVICE
+    ports:
+      - "8084:8080"
+      - "8004:8000"
+    expose:
+      - "8004"
+    depends_on:
+      - database
+      - rabbitmq
+    networks:
+      - my-network
+    volumes:
+      - ./AlarmsMS/build/libs/AlarmsMS-0.0.1-SNAPSHOT.jar:/app/app.jar
+    working_dir: /app
+    entrypoint: java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8004 -jar /app/app.jar
+
+
+  taxService:
+    platform: linux/x86_64
+    image: openjdk:17-jdk-alpine
+    container_name: TAX_SERVICE
+    ports:
+      - "8085:8080"
+      - "8005:8000"
+    expose:
+      - "8005"
+    depends_on:
+      - database
+    networks:
+      - my-network
+    volumes:
+      - ./TaxMS/build/libs/TaxMS-0.0.1-SNAPSHOT.jar:/app/app.jar
+    working_dir: /app
+    entrypoint: java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8005 -jar /app/app.jar
 
 networks:
   my-network:
