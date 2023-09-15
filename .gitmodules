@@ -13,3 +13,6 @@
 [submodule "AlarmsMS"]
 	path = AlarmsMS
 	url = https://github.com/carmineaccogli/AlarmsMS.git
+[submodule "TaxMS"]
+	path = TaxMS
+	url = https://github.com/carmineaccogli/TaxMS.git
