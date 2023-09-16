@@ -7,9 +7,6 @@
 [submodule "CitizenMS"]
 	path = CitizenMS
 	url = https://github.com/carmineaccogli/CitizenMS.git
-[submodule "DisposalMs"]
-	path = DisposalMs
-	url = https://github.com/carmineaccogli/WasteDisposalMS.git
 [submodule "AlarmsMS"]
 	path = AlarmsMS
 	url = https://github.com/carmineaccogli/AlarmsMS.git
