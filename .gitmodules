@@ -13,3 +13,6 @@
 [submodule "TaxMS"]
 	path = TaxMS
 	url = https://github.com/carmineaccogli/TaxMS.git
+[submodule "WasteDisposalMS"]
+	path = WasteDisposalMS
+	url = https://github.com/carmineaccogli/WasteDisposalMS.git
