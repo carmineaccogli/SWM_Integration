@@ -6,7 +6,6 @@
     <file type="web" url="file://$PROJECT_DIR$/AlarmsMS" />
     <file type="web" url="file://$PROJECT_DIR$/AuthorizationMS/LoginMS" />
     <file type="web" url="file://$PROJECT_DIR$/CitizenMS" />
-    <file type="web" url="file://$PROJECT_DIR$/DisposalMs" />
     <file type="web" url="file://$PROJECT_DIR$/SmartBinMS" />
     <file type="web" url="file://$PROJECT_DIR$/TaxMS" />
   </component>
