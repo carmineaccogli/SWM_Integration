@@ -1,24 +1,16 @@
 # SWM_Integration
-The Integration Repository for all the microservices of the Smart Waste Management application
+The Integration Repository of the Smart City Waste Management application
 
-## ADD A SUBMODULE
-To add a submodule (aka a microservice) insert the following command in your local repository:
-```
-git submodule add <REMOTE_REPOSITORY_URL> <DESTINATION_FOLDER>
-```
+## Description
+This repository is an aggregation point for all the microservices of the application.
+It contains the links to the repositories of individual microservices in the form of git-submodules (the references represents specific commit version of the modules). <br>
+---
+The Docker-compose file is use to orchestrate the overall infrastructure in order to simplity local testing.
+---
+The update-submodule script 
+---
 
-Then as usual it is necessary to do:
-```
-git add .gitmodules NEW_SUBMODULE_ADDED
-git commit -m "Added Submodule"
-git push origin main
-```
 
-### TO IMPLEMENT IN A SCRIPT FOR AUTOMATE
-To maintain in sync the submodules in this repo with the latest commit of the remote repos:
-```
-git submodule update --init --recursive --remote 
-```
 
 ### CONTROL THE COMMIT STATUS OF THE SUBMODULES ###
 To fetch new commits that were done in the submodule repository:
