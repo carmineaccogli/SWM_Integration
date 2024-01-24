@@ -16,3 +16,6 @@
 [submodule "WasteDisposalMS"]
 	path = WasteDisposalMS
 	url = https://github.com/carmineaccogli/WasteDisposalMS.git
+[submodule "FrontendAngular"]
+	path = FrontendAngular
+	url = https://github.com/fabiocarluccio/scwmapp-client.git
