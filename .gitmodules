@@ -19,3 +19,6 @@
 [submodule "FrontendAngular"]
 	path = FrontendAngular
 	url = https://github.com/fabiocarluccio/scwmapp-client.git
+[submodule "SmartBinNode"]
+	path = SmartBinNode
+	url = https://github.com/fabiocarluccio/SmartBinNode
